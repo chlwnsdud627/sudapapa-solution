@@ -1,0 +1,6 @@
+rootProject.name = 'sudapapa-solution'
+
+include 'module:codepack'
+include 'demo:boardserver'
+findProject(':module:codepack')?.name = 'codepack'
+findProject(':demo:boardserver')?.name = 'boardserver'

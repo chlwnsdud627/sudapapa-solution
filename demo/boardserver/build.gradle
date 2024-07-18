@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.1'
+    id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'sudapapa.java'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // Default
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // 추가 : DTO Null check 와 같은 체크 기능을 포함한 모듈
+    // 링크 : https://medium.com/paysafe-bulgaria/springboot-dto-validation-good-practices-and-breakdown-fee69277b3b0
+    // implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // 추가 : Mybatis
+    // 링크 : https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter/3.0.3
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc' // 종속
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+
+    // 추가 : PostgresSQL
+    // 링크 : https://mvnrepository.com/artifact/org.postgresql/postgresql
+    runtimeOnly 'org.postgresql:postgresql'
+
+    implementation project(':module:codepack')
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
