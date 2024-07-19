@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- <mapper namespace="mapper.UserServiceMapper">  타입 alias 적용 -->
+<mapper namespace="sudapapa.java.boardserver.mapper.UserServiceMapper">
+    <insert id="register" parameterType="sudapapa.java.boardserver.dto.UserDTO">
+        INSERT INTO "member.user" VALUES (DEFAULT, #{userId}, #{password}, #{isAdmin}, DEFAULT, #{salt})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM "member.user" WHERE id = #{id}
+    </delete>
+</mapper>

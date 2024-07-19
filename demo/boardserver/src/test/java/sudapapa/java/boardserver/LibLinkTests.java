@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.TestComponent;
 import sudapapa.java.codepack.security.Sha256;
 
 @TestComponent
-class LibLinkTest {
+class LibLinkTests {
     @DisplayName("CodePack 링크")
     @Test
     void linkCodePack () {

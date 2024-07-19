@@ -16,11 +16,11 @@ public class Sha256Tests {
         Assertions.assertFalse(salt.isEmpty() || salt.isBlank());
     }
 
-    @DisplayName("SHA-256 암호화 테스트")
+    @DisplayName("SHA256 단방향 암호화 테스트")
     @Test
-    public  void encrypt() {
+    public void encrypt() {
         String salt = Sha256.generateRandomSalt();
-        String password = "이것은 암호입니다";
+        String password = "this is password";
         Assertions.assertNotNull(Sha256.encrypt(password));
         Assertions.assertNotNull(Sha256.encrypt(password, salt));
     }
