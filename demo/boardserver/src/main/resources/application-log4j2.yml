@@ -1,0 +1,9 @@
+
+logging:
+  config: classpath:config/log4j2.xml
+#  pattern:
+#    console: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
+#  level:
+#    org:
+#      springframework: DEBUG
+

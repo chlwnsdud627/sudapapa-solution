@@ -1,11 +1,7 @@
-package sudapapa.java.boardserver.dto;
+package sudapapa.java.boardserver.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-import sudapapa.java.codepack.security.Sha256;
-
-import java.math.BigInteger;
-import java.util.Date;
 
 @Getter
 @Setter

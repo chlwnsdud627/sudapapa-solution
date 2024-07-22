@@ -11,9 +11,8 @@ spring:
       max-lifetime: 240000
       maximum-pool-size: 20
   profiles:
+    include: log4j2
     active: develop
-
-
 
 mybatis:
   # @Alias 를 스캔하는 경로를 설정합니다. 아래 형식은 프로젝트의 전체를 스캔합니다.
@@ -24,8 +23,10 @@ mybatis:
   mapper-locations: classpath:mapper/**/*.xml
   configuration:
     # db 컬럼명에서 언더바를 제거한 카멜케이스로 변경하여 리턴합니다.
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: false
     call-setters-on-nulls: true
     default-statement-timeout: 25
+  config-location: classpath:config/mybatis-config.xml
+
 
 

@@ -35,7 +35,7 @@ public class MybatisConfig {
         sessionFactory.setDataSource(dataSource);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(mapperLocations));
         // application.yml 에서 설정이 완료됨
-        //sessionFactory.setConfigLocation(new PathMatchingResourcePatternResolver().getResource("classpath:mybatis-config.xml"));
+        //sessionFactory.setConfigLocation(new PathMatchingResourcePatternResolver().getResource("classpath:mapper/mybatis-config.xml"));
 
         return  sessionFactory.getObject();
     }

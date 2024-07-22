@@ -3,13 +3,24 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- <mapper namespace="mapper.UserServiceMapper">  타입 alias 적용 -->
+<!-- 타입 Alias 적용 -->
+<!--<mapper namespace="mapper.UserServiceMapper">-->
 <mapper namespace="sudapapa.java.boardserver.mapper.UserServiceMapper">
-    <insert id="register" parameterType="sudapapa.java.boardserver.dto.UserDTO">
+
+    <insert id="register" parameterType="sudapapa.java.boardserver.domain.UserDTO">
         INSERT INTO "member.user" VALUES (DEFAULT, #{userId}, #{password}, #{isAdmin}, DEFAULT, #{salt})
     </insert>
 
     <delete id="delete">
         DELETE FROM "member.user" WHERE id = #{id}
     </delete>
+
+    <update id="updatePassword" parameterType="hashmap">
+        UPDATE "member.user" SET password = #{password} WHERE id = #{id}
+    </update>
+
+    <select id="findUser" resultType="sudapapa.java.boardserver.domain.UserDTO">
+        SELECT id as "userid", password, "isAdmin", salt FROM "member.user" WHERE id = #{id}
+    </select>
+
 </mapper>

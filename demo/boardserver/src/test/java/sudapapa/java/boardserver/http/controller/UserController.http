@@ -1,0 +1,12 @@
+
+DELETE {{host}}/users/test123456
+
+# 아이디 등록
+#POST {{host}}/users/sign-up
+#Content-Type: application/json
+#
+#{
+#   "userId" : "test123456",
+#   "password" : "test123456",
+#   "isAdmin" : false
+#}
