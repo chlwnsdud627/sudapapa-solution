@@ -3,6 +3,7 @@ package sudapapa.java.boardserver.database;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.Ordered;
 import sudapapa.java.boardserver.domain.UserDTO;
 import sudapapa.java.boardserver.mapper.UserServiceMapper;
 import sudapapa.java.codepack.security.Sha256;
@@ -72,7 +73,7 @@ public class UserServiceMapperTests {
     }
 
     // Last order
-    @Order(Integer.MAX_VALUE / 2)
+    @Order(Ordered.LOWEST_PRECEDENCE)
     @DisplayName("삭제 테스트")
     @Test
     public void delete() {

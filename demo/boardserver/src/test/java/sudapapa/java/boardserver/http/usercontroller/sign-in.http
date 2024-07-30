@@ -1,0 +1,7 @@
+POST {{login}}/sign-in
+Content-Type: application/json
+
+{
+   "userId" : "{{testId}}",
+   "password" : "{{testId}}"
+}

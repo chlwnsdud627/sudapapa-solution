@@ -10,4 +10,5 @@ public interface UserService {
     void updatePassword(String userId, String newPassword) throws Throwable;
     boolean isDuplicatedId(String userId);
 
+
 }

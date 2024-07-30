@@ -1,0 +1,10 @@
+
+# 아이디 등록
+POST {{login}}/sign-up
+Content-Type: application/json
+
+{
+   "userId" : "{{testId}}",
+   "password" : "{{testId}}",
+   "isAdmin" : false
+}

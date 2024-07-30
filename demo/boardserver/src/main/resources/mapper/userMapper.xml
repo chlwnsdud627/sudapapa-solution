@@ -20,7 +20,7 @@
     </update>
 
     <select id="findUser" resultType="sudapapa.java.boardserver.domain.UserDTO">
-        SELECT id as "userid", password, "isAdmin", salt FROM "member.user" WHERE id = #{id}
+        SELECT no as "userNo", id as "userId", password, "isAdmin", salt FROM "member.user" WHERE id = #{id}
     </select>
 
 </mapper>
